@@ -1,0 +1,26 @@
+<div class="card bg-dark text-white paymentMethods">
+  <div class="card-header">Payment Method</div>
+  <div class="card-body">
+    <table class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Payment Method</th>
+          <th scope="col">Description</th>
+          <th scope="col">Proceed</th>
+        </tr>
+      </thead>      
+      <tbody style="margin: 100px;">
+        <tr *ngFor="let payment of payments">
+          <td><img src="/assets/{{paymentInfo.paymentMethod.toUpperCase()}}.png"></td>
+          <td>{{payment.tokenizedCard.maskedNumber}}</td>
+          <td style="text-align:center;"><button [routerLink]="['/shoppingCart/pay']" type="button" style="width:50%;" class="btn btn-light btn-lg btn-block">Proceed to Checkout</button></td>
+        <tr>
+          <tr>
+            <td><img src="/assets/PLUS.png"></td>
+            <td>Pay with a new credit card.</td>
+            <td style="text-align:center;"><button [routerLink]="['/shoppingCart/pay']" type="button" style="width:50%;" class="btn btn-light btn-lg btn-block">Proceed to Checkout</button></td>
+          <tr>
+      </tbody>
+    </table>
+  </div>
+</div>

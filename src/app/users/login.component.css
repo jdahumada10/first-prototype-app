@@ -1,0 +1,19 @@
+.card{
+  position:absolute;
+  top: 40%;
+  left:40%;
+  width: 20%;
+}
+
+.login{
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+.usernameform{
+  margin-top: 20px;
+}
+
+.passwordform{
+  margin-top: 20px;
+}

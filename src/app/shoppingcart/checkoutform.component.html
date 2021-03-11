@@ -1,0 +1,125 @@
+<div class="card bg-dark text-white shoppingcart">
+  <div class="card-header">Checkout Order</div>
+  <div class="card-body">
+    <form (ngSubmit) = "pay()" #payForm="ngForm">
+      <div class="form-group row">
+        <label for="creditCardNumber" class="text-white co-form-label col-sm-3">Credit card number</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" [(ngModel)]="paymentInfo.creditCardNumber" name="creditCardNumber" required minlength="13" maxlength="16" #creditCardNumber="ngModel" (change)="detectCardType($event)" Validatirs.pattern="">
+          <div class="alert alert-danger" *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)">
+            <div *ngIf="creditCardNumber.errors.required">
+              Credit card number is required.
+            </div>
+            <div *ngIf="creditCardNumber.errors.minlength">
+              Credit card min length is invalid.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="paymentInfo.paymentMethod!=null" class="form-group row mt-1">
+        <label for="paymentMethod" class="co-form-label col-sm-3">Payment Method</label>
+        <div class="col-sm-6">
+          <img src="/assets/{{paymentInfo.paymentMethod}}.png">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="creditCardSecurityCode" class="text-white co-form-label col-sm-3">Security Code</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.creditCardSecurityCode" name="creditCardSecurityCode" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="creditCardExpirationDate" class="co-form-label col-sm-3">Expiration date</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.creditCardExpirationDate" name="creditCardExpirationDate" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="creditCardName" class="co-form-label col-sm-3">Credit card name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.creditCardName" name="creditCardName" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="creditCardUserDni" class="co-form-label col-sm-3">Credit card user Dni</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.creditCardUserDni" name="creditCardUserDni" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressStreet1" class="co-form-label col-sm-3">Billing Street1</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressStreet1" name="billingAddressStreet1" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressStreet2" class="co-form-label col-sm-3">Billing Street2</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressStreet2" name="billingAddressStreet2" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressCity" class="co-form-label col-sm-3">Billing City</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressCity" name="billingAddressCity" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressState" class="co-form-label col-sm-3">Billing State</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressState" name="billingAddressState" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressCountry" class="co-form-label col-sm-3">Billing Country</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressCountry" name="billingAddressCountry" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressPostalCode" class="co-form-label col-sm-3">Billing Postal Code</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressPostalCode" name="billingAddressPostalCode" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="billingAddressPhone" class="co-form-label col-sm-3">Billing Phone</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="paymentInfo.billingAddressPhone" name="billingAddressPhone" required minlength="1">
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <label for="paymentMethod" class="co-form-label col-sm-3">Save Payment Method</label>
+        <div class="col-sm-6">
+          <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="true" [(ngModel)]="paymentInfo.save">
+  <label class="form-check-label" for="inlineRadio1">Yes</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="false" [(ngModel)]="paymentInfo.save">
+  <label class="form-check-label" for="inlineRadio2">No</label>
+</div>
+        </div>
+      </div>
+      
+      <div class="form-group row mt-1">
+        <div class="col-sm-6">
+          <button class="btn btn-primary" role="button" [disabled]="!payForm.form.valid && paymentInfo.paymentMethod==null">Pay</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

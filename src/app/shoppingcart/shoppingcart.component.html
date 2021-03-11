@@ -1,0 +1,35 @@
+<div class="card bg-dark text-white shoppingcart">
+  <div class="card-header">Shopping Cart</div>
+  <div class="card-body">
+    <h4 *ngIf="order.products == null" style="text-align:center;">Empty shoppingcart.</h4>
+    <table *ngIf="order.products != null" class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Description</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Value</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody style="margin: 100px;">
+        <tr *ngFor="let product of order.products">
+          <td>{{product.product.name}}</td>
+          <td>{{product.product.description}}</td>
+          <td>{{product.quantity}}</td>
+          <td>${{product.product.value}}</td>
+          <td>${{product.product.value * product.quantity}}</td>
+        </tr>
+        <tr>
+          <td colspan="4">Total</td>
+          <td colspan="1">${{order.totalValue}}</td>
+        <tr>
+          <tr>
+            <td colspan="5" style="text-align:center;"><button [routerLink]="['/shoppingCart/chooseMethod']" type="button" style="width:50%;" class="btn btn-light btn-lg btn-block">Proceed to Checkout</button></td>
+          <tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

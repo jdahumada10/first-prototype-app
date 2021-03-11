@@ -1,0 +1,109 @@
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    position: absolute;
+    left: 80%;
+    margin-top: 10px;
+    
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.numberCircle {
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+
+    background: #ffffff;
+    border: 2px solid #666;
+    color: #000;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}
+
+.btn-circle2.btn-xl2 {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    position: absolute;
+    left: 85%;
+    margin-top: 10px;
+    
+}
+
+.btn-circle2 {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.btn-circle3.btn-xl3 {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    position: absolute;
+    left: 90%;
+    margin-top: 10px;
+    
+}
+
+.btn-circle3 {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.btn-circle4.btn-xl4 {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    position: absolute;
+    left: 75%;
+    margin-top: 10px;
+    
+}
+
+.btn-circle4 {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+

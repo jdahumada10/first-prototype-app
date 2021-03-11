@@ -1,0 +1,4 @@
+<button *ngIf="authService.isAuthenticated()" type="button" [routerLink]="['shoppingCart']" class="btn btn-warning btn-circle2 btn-xl2"><i class="fa fa-shopping-cart"><div class="numberCircle">{{sharedService.productsInOrder}}</div></i></button>
+<button type="button" [routerLink]="['login']" class="btn btn-light btn-circle btn-xl"><i class="fa fa-user"></i></button>
+<button *ngIf="authService.isAuthenticated()" (click)="logout()" type="button" class="btn btn-danger btn-circle3 btn-xl3"><i class="fa fa-times"></i></button>
+<button type="button" [routerLink]="['products']" class="btn btn-success btn-circle4 btn-xl4"><i class="fa fa-home"></i></button>
